@@ -1,17 +1,22 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from "@angular/core";
 
+// prettier-ignore
 @Component({
-  selector: 'app-root',
+  selector: "app-root",
   standalone: true,
-  imports: [RouterOutlet],
   template: `
-    <h1>Welcome to {{title}}!</h1>
-
-    <router-outlet />
+    <img class="logo" src="./logo.svg" alt="Decoded Frontend" />
+    <h1 class="page-title">Dynamic Components</h1>
+    
+    <main id="content">
+      <section class="toolbar">
+        <button (click)="createComponent()" class="create">Create Component</button>
+        <button (click)="destroyComponent()" class="destroy">Destroy Component</button>
+      </section>
+    </main>
   `,
-  styles: [],
 })
 export class AppComponent {
-  title = 'angular-dynamic-components';
+  createComponent() {}
+  destroyComponent() {}
 }

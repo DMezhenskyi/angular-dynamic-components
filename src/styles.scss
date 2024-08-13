@@ -1,1 +1,146 @@
 /* You can add global styles to this file, and also import other style files */
+body,
+html {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.close,
+.action {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 10px;
+}
+.page-title {
+  margin-top: 0;
+}
+.logo {
+  margin-top: -20px;
+}
+app-root {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #f0ecec;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+#content {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: white;
+}
+.button-icon {
+  background: #fafafa;
+  border: #666 dashed 1px;
+  border-radius: 5px;
+
+  min-width: 25px;
+  min-height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // margin-left: 4px;
+}
+
+app-widget {
+  min-width: 400px;
+  border: #eceff1 1px solid;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 3px 1px -2px #0003, 0 2px 2px #00000024, 0 1px 5px #0000001f;
+  margin-bottom: 10px;
+  button {
+    display: block;
+    margin: 0 auto;
+    background: #fafafa;
+    border: #ccc solid 1px;
+    border-radius: 3px;
+  }
+}
+.widget-actions {
+  background-color: #fafafa;
+  border-top: #eceff1 1px solid;
+  margin: 0 -10px -10px -10px;
+  border-bottom-left-radius: 13px;
+  border-bottom-right-radius: 13px;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+}
+button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  color: #4d2e23;
+  font-weight: 600;
+  &.create {
+    background-color: #ffd044;
+    border: 1px solid #dba606;
+  }
+  &.destroy {
+    background-color: #ff6b6b;
+    border: 1px solid #e74c3c;
+  }
+}
+.widget-actions button:hover {
+  background-color: #ffd65c;
+}
+.widget-actions button:active {
+  background-color: #e7b51f;
+}
+.widget-header {
+  position: relative;
+  border-bottom: #eceff1 1px solid;
+  margin: 0 -10px 0 -10px;
+  padding: 0 15px 15px 15px;
+}
+.widget-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+.widget-sub-title {
+  font-size: 13px;
+}
+.widget-content {
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.sky-condition {
+  font-size: 48px;
+}
+app-button button {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  border: #ccc solid 1px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.no-content {
+  padding: 30px 10px;
+  border: #ccc dashed 1px;
+  border-radius: 5px;
+  width: 100%;
+  background-color: #fafafa;
+  font-size: 12px;
+  text-align: center;
+}
+.widget-content {
+  padding: 10px;
+}
+/* You can add global styles to this file, and also import other style files */
