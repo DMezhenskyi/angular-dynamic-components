@@ -131,14 +131,21 @@ app-button button {
   border-radius: 5px;
   cursor: pointer;
 }
-.no-content {
+.no-content,
+.no-actions {
   padding: 30px 10px;
   border: #ccc dashed 1px;
   border-radius: 5px;
   width: 100%;
   background-color: #fafafa;
-  font-size: 12px;
+  font-size: 11px;
   text-align: center;
+  margin: 5px 8px;
+}
+.no-actions {
+  padding: 5px 10px;
+  font-size: 11px;
+  background-color: #fff;
 }
 .widget-content {
   padding: 10px;

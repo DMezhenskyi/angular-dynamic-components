@@ -14,6 +14,11 @@ import { Component, input, output } from "@angular/core";
         <p class="no-content">No content...</p>
       </ng-content>
     </div>
+    <div class="widget-actions">
+      <ng-content select="[actions]">
+        <p class="no-actions">No actions...</p>
+      </ng-content>
+    </div>
   `,
 })
 export class WidgetComponent {
