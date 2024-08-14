@@ -1,6 +1,4 @@
 import { Component } from "@angular/core";
-
-// prettier-ignore
 @Component({
   selector: "app-root",
   standalone: true,
