@@ -4,6 +4,7 @@ html {
   padding: 0;
   margin: 0;
   font-family: "Poppins", sans-serif;
+  background-color: #f0ecec;
 }
 
 .close,
@@ -20,12 +21,11 @@ html {
   margin-top: -20px;
 }
 app-root {
-  height: 100vh;
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: #f0ecec;
   padding: 40px;
   box-sizing: border-box;
 }
@@ -56,10 +56,12 @@ app-root {
 app-widget {
   min-width: 280px;
   border: #eceff1 1px solid;
+  display: block;
   padding: 10px;
+  background-color: white;
   border-radius: 15px;
   box-shadow: 0 3px 1px -2px #0003, 0 2px 2px #00000024, 0 1px 5px #0000001f;
-  margin-bottom: 10px;
+  margin: 10px 40px;
   button {
     display: block;
     margin: 0 auto;
