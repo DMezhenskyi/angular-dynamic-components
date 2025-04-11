@@ -2,9 +2,8 @@ import { Component, ComponentRef, ElementRef, inject, TemplateRef, viewChild, Vi
 import { WidgetComponent } from "./widget/widget.component";
 import { WeatherContentComponent } from "./widget/weather-content.component";
 @Component({
-  selector: "app-root",
-  standalone: true,
-  template: `
+    selector: "app-root",
+    template: `
     <img class="logo" src="./logo.svg" alt="Decoded Frontend" />
     <h1 class="page-title">Dynamic Components</h1>
     <ng-template #content>
@@ -18,7 +17,7 @@ import { WeatherContentComponent } from "./widget/weather-content.component";
       </section>
     </main>
   `,
-  imports: [WeatherContentComponent],
+    imports: [WeatherContentComponent]
 })
 export class AppComponent {
   vcr = viewChild('container', { read: ViewContainerRef });
