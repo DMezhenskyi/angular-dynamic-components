@@ -7,7 +7,7 @@ import { Component, input, output } from "@angular/core";
     <div class="widget-header">
       <div class="widget-title">{{ title() }}</div>
       <div class="widget-sub-title">{{ description() }}</div>
-      <button class="action" (click)="closed.emit()">close</button>
+      <button class="action" (click)="handleClick()">close</button>
     </div>
     <div class="widget-content">
       <ng-content>
@@ -26,4 +26,8 @@ export class WidgetComponent {
   description = input("__Widget description__");
 
   closed = output<void>();
+
+  handleClick() {
+    this.closed.emit();
+  }
 }

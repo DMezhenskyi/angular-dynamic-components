@@ -26,7 +26,8 @@ export class AppComponent {
   #componentRef?: ComponentRef<WidgetComponent>;
   createComponent() {
     this.vcr()?.clear();
-    const contentView = this.vcr()?.createEmbeddedView(this.content()!)
+    this.#componentRef = undefined;
+    let contentView = this.vcr()?.createEmbeddedView(this.content()!)
     this.#componentRef = this.vcr()?.createComponent(WidgetComponent, {
       projectableNodes: [
         contentView?.rootNodes!
@@ -34,12 +35,18 @@ export class AppComponent {
     })
     this.#componentRef?.setInput('title', 'Weather'); 
     this.#componentRef?.setInput('description', 'Currently in Vienna:');
+    this.#componentRef?.onDestroy(() => contentView?.destroy());
 
     this.#componentRef?.instance.closed.subscribe(
-      () => this.#componentRef?.destroy()
+      () => {
+        // maybe this is leaking
+        this.#componentRef?.destroy();
+        this.#componentRef = undefined;
+      }
     )
   }
   destroyComponent() {
     this.vcr()?.clear();
+    this.#componentRef = undefined;
   }
 }

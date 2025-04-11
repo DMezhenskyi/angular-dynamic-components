@@ -15,9 +15,9 @@ export class WeatherContentComponent {
 
   protected temperature = 21;
 
-  #polling = interval(5000).pipe(takeUntilDestroyed());
+  #polling = interval(5000);
 
   ngOnInit() {
-    this.#polling.subscribe(() => (this.lastUpdateAt = new Date()));
+    this.#polling.pipe(takeUntilDestroyed()).subscribe(() => (this.lastUpdateAt = new Date()));
   }
 }
