@@ -18,6 +18,6 @@ export class WeatherContentComponent {
   #polling = interval(5000);
 
   ngOnInit() {
-    this.#polling.pipe(takeUntilDestroyed()).subscribe(() => (this.lastUpdateAt = new Date()));
+    this.#polling.subscribe(() => (this.lastUpdateAt = new Date()));
   }
 }

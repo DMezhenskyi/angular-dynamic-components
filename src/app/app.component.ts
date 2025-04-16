@@ -1,4 +1,4 @@
-import { Component, ComponentRef, ElementRef, inject, TemplateRef, viewChild, ViewContainerRef } from "@angular/core";
+import { Component, ComponentRef, TemplateRef, viewChild, ViewContainerRef } from "@angular/core";
 import { WidgetComponent } from "./widget/widget.component";
 import { WeatherContentComponent } from "./widget/weather-content.component";
 @Component({
@@ -23,9 +23,9 @@ export class AppComponent {
   vcr = viewChild('container', { read: ViewContainerRef });
   content = viewChild<TemplateRef<unknown>>('content');
   #componentRef?: ComponentRef<WidgetComponent>;
+  
   createComponent() {
     this.vcr()?.clear();
-    this.#componentRef = undefined;
     let contentView = this.vcr()?.createEmbeddedView(this.content()!)
     this.#componentRef = this.vcr()?.createComponent(WidgetComponent, {
       projectableNodes: [
@@ -34,18 +34,13 @@ export class AppComponent {
     })
     this.#componentRef?.setInput('title', 'Weather'); 
     this.#componentRef?.setInput('description', 'Currently in Vienna:');
-    this.#componentRef?.onDestroy(() => contentView?.destroy());
 
-    this.#componentRef?.instance.closed.subscribe(
-      () => {
-        // maybe this is leaking
-        this.#componentRef?.destroy();
-        this.#componentRef = undefined;
+    this.#componentRef?.instance.closed.subscribe(() => {
+        this.#componentRef?.destroy()
       }
     )
   }
   destroyComponent() {
-    this.vcr()?.clear();
-    this.#componentRef = undefined;
+    this.vcr()?.clear()
   }
 }
