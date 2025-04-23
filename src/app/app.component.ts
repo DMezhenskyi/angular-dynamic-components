@@ -1,8 +1,9 @@
-import { Component, ComponentRef, TemplateRef, viewChild, ViewContainerRef } from "@angular/core";
-import { WidgetComponent } from "./widget/widget.component";
-import { WeatherContentComponent } from "./widget/weather-content.component";
+import { Component, ComponentRef, TemplateRef, viewChild, ViewContainerRef } from '@angular/core';
+import { WidgetComponent } from './widget/widget.component';
+import { WeatherContentComponent } from './widget/weather-content.component';
+
 @Component({
-    selector: "app-root",
+    selector: 'app-root',
     template: `
     <img class="logo" src="./logo.svg" alt="Decoded Frontend" />
     <h1 class="page-title">Dynamic Components</h1>
